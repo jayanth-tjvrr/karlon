@@ -4,8 +4,8 @@ import (
 	"fmt"
 
 	"github.com/argoproj/argo-cd/v2/util/cli"
-	"github.com/jayanth-tjvrr/karlon/pkg/pkg/bundle"
-	"github.com/jayanth-tjvrr/karlon/pkg/pkg/gitrepo"
+	"github.com/jayanth-tjvrr/karlon/pkg/bundle"
+	"github.com/jayanth-tjvrr/karlon/pkg/gitrepo"
 	"github.com/spf13/cobra"
 	"k8s.io/client-go/kubernetes"
 	"k8s.io/client-go/tools/clientcmd"

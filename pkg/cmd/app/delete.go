@@ -3,7 +3,7 @@ package app
 import (
 	"fmt"
 	"github.com/argoproj/argo-cd/v2/util/cli"
-	"github.com/jayanth-tjvrr/karlon/pkg/pkg/app"
+	"github.com/jayanth-tjvrr/karlon/pkg/app"
 	"github.com/spf13/cobra"
 	"k8s.io/client-go/tools/clientcmd"
 )

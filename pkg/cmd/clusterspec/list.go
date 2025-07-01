@@ -4,7 +4,7 @@ import (
 	"context"
 	"fmt"
 	"github.com/argoproj/argo-cd/v2/util/cli"
-	"github.com/jayanth-tjvrr/karlon/pkg/pkg/clusterspec"
+	"github.com/jayanth-tjvrr/karlon/pkg/clusterspec"
 	"github.com/spf13/cobra"
 	metav1 "k8s.io/apimachinery/pkg/apis/meta/v1"
 	"k8s.io/client-go/kubernetes"

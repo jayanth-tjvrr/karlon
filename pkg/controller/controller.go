@@ -7,7 +7,7 @@ import (
 
 	kkarlonv1 "github.com/jayanth-tjvrr/karlon/pkg/api/v1"
 	"github.com/jayanth-tjvrr/karlon/pkg/controllers"
-	"github.com/jayanth-tjvrr/karlon/pkg/pkg/argocd"
+	"github.com/jayanth-tjvrr/karlon/pkg/argocd"
 	corev1 "k8s.io/api/core/v1"
 	"k8s.io/apimachinery/pkg/runtime"
 	utilruntime "k8s.io/apimachinery/pkg/util/runtime"

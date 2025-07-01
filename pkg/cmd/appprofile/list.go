@@ -2,7 +2,7 @@ package appprofile
 
 import (
 	"fmt"
-	"github.com/jayanth-tjvrr/karlon/pkg/pkg/appprofile"
+	"github.com/jayanth-tjvrr/karlon/pkg/appprofile"
 	"github.com/spf13/cobra"
 	"k8s.io/client-go/tools/clientcmd"
 )

@@ -2,7 +2,7 @@ package webhook
 
 import (
 	"fmt"
-	"github.com/jayanth-tjvrr/karlon/pkg/pkg/controller"
+	"github.com/jayanth-tjvrr/karlon/pkg/controller"
 	admissionv1 "k8s.io/api/admission/v1"
 	admissionregistrationv1 "k8s.io/api/admissionregistration/v1"
 	"k8s.io/apimachinery/pkg/runtime"

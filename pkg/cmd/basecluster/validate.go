@@ -2,7 +2,7 @@ package basecluster
 
 import (
 	"fmt"
-	bcl "github.com/jayanth-tjvrr/karlon/pkg/pkg/basecluster"
+	bcl "github.com/jayanth-tjvrr/karlon/pkg/basecluster"
 	"github.com/spf13/cobra"
 	// "k8s.io/client-go/tools/clientcmd"
 )

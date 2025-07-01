@@ -6,8 +6,8 @@ import (
 	"path"
 	"testing"
 
-	"github.com/jayanth-tjvrr/karlon/pkg/pkg/argocd"
-	"github.com/jayanth-tjvrr/karlon/pkg/pkg/gitutils"
+	"github.com/jayanth-tjvrr/karlon/pkg/argocd"
+	"github.com/jayanth-tjvrr/karlon/pkg/gitutils"
 	gogit "github.com/go-git/go-git/v5"
 	"github.com/otiai10/copy"
 	"gotest.tools/v3/assert"

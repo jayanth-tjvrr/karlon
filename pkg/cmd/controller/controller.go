@@ -1,7 +1,7 @@
 package controller
 
 import (
-	"github.com/jayanth-tjvrr/karlon/pkg/pkg/controller"
+	"github.com/jayanth-tjvrr/karlon/pkg/controller"
 	"github.com/spf13/cobra"
 )
 

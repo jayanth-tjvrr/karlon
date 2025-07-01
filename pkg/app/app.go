@@ -5,7 +5,7 @@ import (
 	"fmt"
 
 	argoappv1 "github.com/argoproj/argo-cd/v2/pkg/apis/application/v1alpha1"
-	"github.com/jayanth-tjvrr/karlon/pkg/pkg/ctrlruntimeclient"
+	"github.com/jayanth-tjvrr/karlon/pkg/ctrlruntimeclient"
 	apiextensionsv1 "k8s.io/apiextensions-apiserver/pkg/apis/apiextensions/v1"
 	metav1 "k8s.io/apimachinery/pkg/apis/meta/v1"
 	"k8s.io/apimachinery/pkg/labels"

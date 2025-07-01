@@ -4,9 +4,9 @@ import (
 	_ "embed"
 	"fmt"
 	"github.com/argoproj/argo-cd/v2/util/cli"
-	"github.com/jayanth-tjvrr/karlon/pkg/pkg/argocd"
-	"github.com/jayanth-tjvrr/karlon/pkg/pkg/cluster"
-	"github.com/jayanth-tjvrr/karlon/pkg/pkg/profile"
+	"github.com/jayanth-tjvrr/karlon/pkg/argocd"
+	"github.com/jayanth-tjvrr/karlon/pkg/cluster"
+	"github.com/jayanth-tjvrr/karlon/pkg/profile"
 	"github.com/spf13/cobra"
 	"k8s.io/client-go/tools/clientcmd"
 )

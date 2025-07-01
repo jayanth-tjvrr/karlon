@@ -4,9 +4,9 @@ import (
 	"fmt"
 
 	"github.com/argoproj/argo-cd/v2/util/cli"
-	"github.com/jayanth-tjvrr/karlon/pkg/pkg/argocd"
-	bcl "github.com/jayanth-tjvrr/karlon/pkg/pkg/basecluster"
-	"github.com/jayanth-tjvrr/karlon/pkg/pkg/gitrepo"
+	"github.com/jayanth-tjvrr/karlon/pkg/argocd"
+	bcl "github.com/jayanth-tjvrr/karlon/pkg/basecluster"
+	"github.com/jayanth-tjvrr/karlon/pkg/gitrepo"
 	"github.com/spf13/cobra"
 	"k8s.io/client-go/tools/clientcmd"
 )

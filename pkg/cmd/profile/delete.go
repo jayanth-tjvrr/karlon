@@ -2,8 +2,8 @@ package profile
 
 import (
 	"fmt"
-	"github.com/jayanth-tjvrr/karlon/pkg/pkg/controller"
-	"github.com/jayanth-tjvrr/karlon/pkg/pkg/profile"
+	"github.com/jayanth-tjvrr/karlon/pkg/controller"
+	"github.com/jayanth-tjvrr/karlon/pkg/profile"
 	"github.com/spf13/cobra"
 	apierr "k8s.io/apimachinery/pkg/api/errors"
 	"k8s.io/client-go/kubernetes"

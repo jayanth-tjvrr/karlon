@@ -2,7 +2,7 @@ package bundle
 
 import (
 	"fmt"
-	"github.com/jayanth-tjvrr/karlon/pkg/pkg/bundle"
+	"github.com/jayanth-tjvrr/karlon/pkg/bundle"
 	"github.com/spf13/cobra"
 	restclient "k8s.io/client-go/rest"
 	"k8s.io/client-go/tools/clientcmd"

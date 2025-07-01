@@ -4,7 +4,7 @@ import (
 	"context"
 	"fmt"
 	"github.com/jayanth-tjvrr/karlon/pkg/api/v1"
-	"github.com/jayanth-tjvrr/karlon/pkg/pkg/ctrlruntimeclient"
+	"github.com/jayanth-tjvrr/karlon/pkg/ctrlruntimeclient"
 	restclient "k8s.io/client-go/rest"
 	"os"
 	"sigs.k8s.io/controller-runtime/pkg/client"

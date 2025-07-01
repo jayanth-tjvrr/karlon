@@ -7,8 +7,8 @@ import (
 
 	//appset "github.com/argoproj/argo-cd/v2/pkg/apis/applicationset/v1alpha1"
 	appset "github.com/argoproj/argo-cd/v2/pkg/apis/application/v1alpha1"
-	"github.com/jayanth-tjvrr/karlon/pkg/pkg/app"
-	"github.com/jayanth-tjvrr/karlon/pkg/pkg/ctrlruntimeclient"
+	"github.com/jayanth-tjvrr/karlon/pkg/app"
+	"github.com/jayanth-tjvrr/karlon/pkg/ctrlruntimeclient"
 
 	"github.com/argoproj/argo-cd/v2/util/cli"
 	"github.com/spf13/cobra"

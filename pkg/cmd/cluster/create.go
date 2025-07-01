@@ -4,8 +4,8 @@ import (
 	"fmt"
 	"os"
 
-	"github.com/jayanth-tjvrr/karlon/pkg/pkg/cluster"
-	"github.com/jayanth-tjvrr/karlon/pkg/pkg/gitrepo"
+	"github.com/jayanth-tjvrr/karlon/pkg/cluster"
+	"github.com/jayanth-tjvrr/karlon/pkg/gitrepo"
 	"github.com/spf13/cobra"
 )
 

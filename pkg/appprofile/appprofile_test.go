@@ -14,7 +14,7 @@ import (
 
 	argoapp "github.com/argoproj/argo-cd/v2/pkg/apis/application/v1alpha1"
 	kkarlonv1 "github.com/jayanth-tjvrr/karlon/pkg/api/v1"
-	kkarlonapp "github.com/jayanth-tjvrr/karlon/pkg/pkg/app"
+	kkarlonapp "github.com/jayanth-tjvrr/karlon/pkg/app"
 	sets "github.com/deckarep/golang-set/v2"
 	"github.com/go-logr/logr"
 	"github.com/stretchr/testify/assert"

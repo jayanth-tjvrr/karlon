@@ -7,8 +7,8 @@ import (
 	argoapp "github.com/argoproj/argo-cd/v2/pkg/apiclient/application"
 	"github.com/argoproj/argo-cd/v2/util/cli"
 	"github.com/argoproj/argo-cd/v2/util/io"
-	"github.com/jayanth-tjvrr/karlon/pkg/pkg/argocd"
-	"github.com/jayanth-tjvrr/karlon/pkg/pkg/cluster"
+	"github.com/jayanth-tjvrr/karlon/pkg/argocd"
+	"github.com/jayanth-tjvrr/karlon/pkg/cluster"
 	"github.com/spf13/cobra"
 	"k8s.io/client-go/tools/clientcmd"
 )

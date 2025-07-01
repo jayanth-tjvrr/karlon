@@ -10,7 +10,7 @@ import (
 	argoappv1 "github.com/argoproj/argo-cd/v2/pkg/apis/application/v1alpha1"
 	"github.com/argoproj/argo-cd/v2/util/errors"
 	"github.com/argoproj/argo-cd/v2/util/io"
-	"github.com/jayanth-tjvrr/karlon/pkg/pkg/argocd"
+	"github.com/jayanth-tjvrr/karlon/pkg/argocd"
 	"github.com/spf13/cobra"
 )
 

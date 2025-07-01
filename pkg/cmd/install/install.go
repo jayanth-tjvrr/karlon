@@ -10,8 +10,8 @@ import (
 	"time"
 
 	"github.com/argoproj/argo-cd/v2/util/cli"
-	"github.com/jayanth-tjvrr/karlon/pkg/pkg/install"
-	"github.com/jayanth-tjvrr/karlon/pkg/pkg/log"
+	"github.com/jayanth-tjvrr/karlon/pkg/install"
+	"github.com/jayanth-tjvrr/karlon/pkg/log"
 	"github.com/fatih/color"
 	"github.com/spf13/cobra"
 	clusterctlv1 "sigs.k8s.io/cluster-api/cmd/clusterctl/api/v1alpha3"

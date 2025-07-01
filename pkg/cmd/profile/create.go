@@ -3,8 +3,8 @@ package profile
 import (
 	"fmt"
 	karlonv1 "github.com/jayanth-tjvrr/karlon/pkg/api/v1"
-	"github.com/jayanth-tjvrr/karlon/pkg/pkg/gitrepo"
-	"github.com/jayanth-tjvrr/karlon/pkg/pkg/profile"
+	"github.com/jayanth-tjvrr/karlon/pkg/gitrepo"
+	"github.com/jayanth-tjvrr/karlon/pkg/profile"
 	"github.com/spf13/cobra"
 	"k8s.io/client-go/tools/clientcmd"
 	"strings"

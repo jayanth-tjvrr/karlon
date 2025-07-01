@@ -14,8 +14,8 @@ import (
 	"sync"
 
 	kkarlonv1 "github.com/jayanth-tjvrr/karlon/pkg/api/v1"
-	kkarlonapp "github.com/jayanth-tjvrr/karlon/pkg/pkg/app"
-	kkarlonclusters "github.com/jayanth-tjvrr/karlon/pkg/pkg/cluster"
+	kkarlonapp "github.com/jayanth-tjvrr/karlon/pkg/app"
+	kkarlonclusters "github.com/jayanth-tjvrr/karlon/pkg/cluster"
 	sets "github.com/deckarep/golang-set/v2"
 	"github.com/go-logr/logr"
 	apiextensionsv1 "k8s.io/apiextensions-apiserver/pkg/apis/apiextensions/v1"

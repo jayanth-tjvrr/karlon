@@ -3,8 +3,8 @@ package cluster
 import (
 	_ "embed"
 	"fmt"
-	"github.com/jayanth-tjvrr/karlon/pkg/pkg/argocd"
-	"github.com/jayanth-tjvrr/karlon/pkg/pkg/cluster"
+	"github.com/jayanth-tjvrr/karlon/pkg/argocd"
+	"github.com/jayanth-tjvrr/karlon/pkg/cluster"
 	"github.com/spf13/cobra"
 )
 

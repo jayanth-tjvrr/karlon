@@ -2,7 +2,7 @@ package webhook
 
 import (
 	"fmt"
-	"github.com/jayanth-tjvrr/karlon/pkg/pkg/log"
+	"github.com/jayanth-tjvrr/karlon/pkg/log"
 	"github.com/go-logr/logr"
 	"io"
 	v1 "k8s.io/api/admission/v1"

@@ -2,7 +2,7 @@ package webhook
 
 import (
 	"flag"
-	"github.com/jayanth-tjvrr/karlon/pkg/pkg/webhook"
+	"github.com/jayanth-tjvrr/karlon/pkg/webhook"
 	"github.com/spf13/cobra"
 )
 

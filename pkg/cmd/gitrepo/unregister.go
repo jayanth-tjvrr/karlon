@@ -4,7 +4,7 @@ import (
 	"encoding/json"
 	"fmt"
 	argocdio "github.com/argoproj/argo-cd/v2/util/io"
-	"github.com/jayanth-tjvrr/karlon/pkg/pkg/gitrepo"
+	"github.com/jayanth-tjvrr/karlon/pkg/gitrepo"
 	"github.com/spf13/cobra"
 )
 

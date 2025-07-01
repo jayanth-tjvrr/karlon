@@ -2,7 +2,7 @@ package clustercontroller
 
 import (
 	"github.com/argoproj/argo-cd/v2/util/cli"
-	"github.com/jayanth-tjvrr/karlon/pkg/pkg/controller"
+	"github.com/jayanth-tjvrr/karlon/pkg/controller"
 	"github.com/spf13/cobra"
 	"k8s.io/client-go/tools/clientcmd"
 )

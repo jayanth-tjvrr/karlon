@@ -5,15 +5,15 @@ import (
 	"fmt"
 	"os"
 
-	"github.com/jayanth-tjvrr/karlon/pkg/pkg/gitrepo"
+	"github.com/jayanth-tjvrr/karlon/pkg/gitrepo"
 
 	"github.com/argoproj/argo-cd/v2/pkg/apis/application/v1alpha1"
 	"github.com/argoproj/argo-cd/v2/util/cli"
 	argocdio "github.com/argoproj/argo-cd/v2/util/io"
 
-	"github.com/jayanth-tjvrr/karlon/pkg/pkg/argocd"
-	"github.com/jayanth-tjvrr/karlon/pkg/pkg/cluster"
-	"github.com/jayanth-tjvrr/karlon/pkg/pkg/profile"
+	"github.com/jayanth-tjvrr/karlon/pkg/argocd"
+	"github.com/jayanth-tjvrr/karlon/pkg/cluster"
+	"github.com/jayanth-tjvrr/karlon/pkg/profile"
 	karlonv1 "github.com/jayanth-tjvrr/karlon/pkg/api/v1"
 	"github.com/spf13/cobra"
 	"k8s.io/apimachinery/pkg/runtime"
