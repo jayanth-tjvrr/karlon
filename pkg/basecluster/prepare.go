@@ -8,9 +8,9 @@ import (
 	"strconv"
 	"text/template"
 
-	"github.com/jayanth-tjvrr/karlon/pkg/pkg/argocd"
-	"github.com/jayanth-tjvrr/karlon/pkg/pkg/gitutils"
-	logpkg "github.com/jayanth-tjvrr/karlon/pkg/pkg/log"
+	"github.com/jayanth-tjvrr/karlon/pkg/argocd"
+	"github.com/jayanth-tjvrr/karlon/pkg/gitutils"
+	logpkg "github.com/jayanth-tjvrr/karlon/pkg/log"
 	"github.com/go-git/go-billy/v5"
 	gogit "github.com/go-git/go-git/v5"
 	"k8s.io/apimachinery/pkg/apis/meta/v1/unstructured"

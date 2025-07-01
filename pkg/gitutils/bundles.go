@@ -3,8 +3,8 @@ package gitutils
 import (
 	"bytes"
 	"fmt"
-	"github.com/jayanth-tjvrr/karlon/pkg/pkg/bundle"
-	"github.com/jayanth-tjvrr/karlon/pkg/pkg/common"
+	"github.com/jayanth-tjvrr/karlon/pkg/bundle"
+	"github.com/jayanth-tjvrr/karlon/pkg/common"
 	gogit "github.com/go-git/go-git/v5"
 	"io"
 	"io/fs"

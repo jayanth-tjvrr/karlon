@@ -9,7 +9,7 @@ import (
 	"strings"
 	"text/template"
 
-	"github.com/jayanth-tjvrr/karlon/pkg/pkg/log"
+	"github.com/jayanth-tjvrr/karlon/pkg/log"
 	"github.com/go-git/go-billy"
 	gogit "github.com/go-git/go-git/v5"
 	"gopkg.in/yaml.v2"

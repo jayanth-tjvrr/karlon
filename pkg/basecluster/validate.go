@@ -5,7 +5,7 @@ import (
 	"os"
 	"path"
 
-	"github.com/jayanth-tjvrr/karlon/pkg/pkg/argocd"
+	"github.com/jayanth-tjvrr/karlon/pkg/argocd"
 	"k8s.io/cli-runtime/pkg/resource"
 )
 

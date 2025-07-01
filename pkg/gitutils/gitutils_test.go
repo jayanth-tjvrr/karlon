@@ -1,7 +1,7 @@
 package gitutils
 
 import (
-	"github.com/jayanth-tjvrr/karlon/pkg/pkg/common"
+	"github.com/jayanth-tjvrr/karlon/pkg/common"
 	"strings"
 	"testing"
 	"text/template"

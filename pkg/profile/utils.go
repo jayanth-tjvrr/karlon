@@ -4,11 +4,11 @@ import (
 	"context"
 	"errors"
 	"fmt"
-	"github.com/jayanth-tjvrr/karlon/pkg/pkg/ctrlruntimeclient"
+	"github.com/jayanth-tjvrr/karlon/pkg/ctrlruntimeclient"
 	"strings"
 
 	kkarlonv1 "github.com/jayanth-tjvrr/karlon/pkg/api/v1"
-	"github.com/jayanth-tjvrr/karlon/pkg/pkg/bundle"
+	"github.com/jayanth-tjvrr/karlon/pkg/bundle"
 	sets "github.com/deckarep/golang-set"
 	v1 "k8s.io/api/core/v1"
 	apierr "k8s.io/apimachinery/pkg/api/errors"

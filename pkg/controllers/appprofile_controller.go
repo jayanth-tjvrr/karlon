@@ -20,7 +20,7 @@ import (
 	"context"
 	"github.com/argoproj/argo-cd/v2/pkg/apiclient"
 	corev1 "github.com/jayanth-tjvrr/karlon/pkg/api/v1"
-	"github.com/jayanth-tjvrr/karlon/pkg/pkg/appprofile"
+	"github.com/jayanth-tjvrr/karlon/pkg/appprofile"
 	"k8s.io/apimachinery/pkg/runtime"
 	ctrl "sigs.k8s.io/controller-runtime"
 	"sigs.k8s.io/controller-runtime/pkg/client"

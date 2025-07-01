@@ -22,7 +22,7 @@ import (
 	"github.com/argoproj/argo-cd/v2/pkg/apiclient"
 	argoclient "github.com/argoproj/argo-cd/v2/pkg/apiclient"
 	argoapp "github.com/argoproj/argo-cd/v2/pkg/apis/application/v1alpha1"
-	"github.com/jayanth-tjvrr/karlon/pkg/pkg/appprofile"
+	"github.com/jayanth-tjvrr/karlon/pkg/appprofile"
 	"github.com/go-logr/logr"
 	apierrors "k8s.io/apimachinery/pkg/api/errors"
 	"k8s.io/apimachinery/pkg/runtime"

@@ -46,7 +46,7 @@ import (
 	"github.com/jayanth-tjvrr/karlon/pkg/cmd/profile"
 	"github.com/jayanth-tjvrr/karlon/pkg/cmd/verify"
 	"github.com/jayanth-tjvrr/karlon/pkg/cmd/version"
-	"github.com/jayanth-tjvrr/karlon/pkg/pkg/argocd"
+	"github.com/jayanth-tjvrr/karlon/pkg/argocd"
 
 	// Import all Kubernetes client auth plugins (e.g. Azure, GCP, OIDC, etc.)
 	// to ensure that exec-entrypoint and run can make use of them.

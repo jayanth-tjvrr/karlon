@@ -4,7 +4,7 @@ import (
 	"context"
 	"fmt"
 	kkarlonv1 "github.com/jayanth-tjvrr/karlon/pkg/api/v1"
-	"github.com/jayanth-tjvrr/karlon/pkg/pkg/common"
+	"github.com/jayanth-tjvrr/karlon/pkg/common"
 	metav1 "k8s.io/apimachinery/pkg/apis/meta/v1"
 	corev1types "k8s.io/client-go/kubernetes/typed/core/v1"
 )

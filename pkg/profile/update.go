@@ -4,9 +4,9 @@ import (
 	"context"
 	"fmt"
 	kkarlonv1 "github.com/jayanth-tjvrr/karlon/pkg/api/v1"
-	"github.com/jayanth-tjvrr/karlon/pkg/pkg/argocd"
-	"github.com/jayanth-tjvrr/karlon/pkg/pkg/bundle"
-	"github.com/jayanth-tjvrr/karlon/pkg/pkg/ctrlruntimeclient"
+	"github.com/jayanth-tjvrr/karlon/pkg/argocd"
+	"github.com/jayanth-tjvrr/karlon/pkg/bundle"
+	"github.com/jayanth-tjvrr/karlon/pkg/ctrlruntimeclient"
 	restclient "k8s.io/client-go/rest"
 )
 
