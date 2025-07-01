@@ -1,0 +1,164 @@
+apiVersion: cluster.x-k8s.io/v1beta1
+kind: Cluster
+metadata:
+    labels:
+        cas-capi-version: v1.32
+        core-addons: enabled
+        metrics-server: 0.6.4
+        proxy-addons: enabled
+    name: testcluster
+    namespace: testns
+spec:
+    clusterNetwork:
+        apiServerPort: 443
+        pods:
+            cidrBlocks:
+                - 10.244.0.0/16
+        services:
+            cidrBlocks:
+                - 10.96.0.0/16
+    controlPlaneRef:
+        apiVersion: controlplane.platform9.io/v1alpha1
+        kind: HostedControlPlane
+        name: testclustercp
+        namespace: testns
+    infrastructureRef:
+        apiVersion: infrastructure.cluster.x-k8s.io/v1beta1
+        kind: ByoCluster
+        name: testcluster
+        namespace: testns
+
+---
+apiVersion: infrastructure.cluster.x-k8s.io/v1beta1
+kind: ByoCluster
+metadata:
+    name: testcluster
+    namespace: testns
+spec:
+    bundleLookupBaseRegistry: quay.io/platform9
+    controlPlaneEndpoint:
+        host: testclustercp.default-service.k8s.byo-upg-3.app.dev-pcd.platform9.com
+        port: 443
+
+---
+apiVersion: controlplane.platform9.io/v1alpha1
+kind: HostedControlPlane
+metadata:
+    name: testclustercp
+    namespace: testns
+spec:
+    addons:
+        coreDNS: {}
+        konnectivity:
+            agent:
+                extraArgs:
+                    - --proxy-server-host=konnectivity-testclustercp.default-service.k8s.byo-upg-3.app.dev-pcd.platform9.com
+                    - --proxy-server-port=443
+                image: registry.k8s.io/kas-network-proxy/proxy-agent
+                tolerations:
+                    - key: CriticalAddonsOnly
+                      operator: Exists
+                version: v0.0.32
+            server:
+                image: registry.k8s.io/kas-network-proxy/proxy-server
+                port: 8132
+                version: v0.0.32
+    apiServer:
+        extraArgs:
+            - --cloud-provider=external
+            - --cors-allowed-origins=https://byo-upg-3-regionone.app.dev-pcd.platform9.com,https://byo-upg-3-regionone.app.dev-pcd.platform9.com/,https://byo-upg-3-regionone.app.dev-pcd.platform9.com,https://byo-upg-3-regionone.app.dev-pcd.platform9.com/
+            - --advertise-address=10.96.0.40
+            - --authentication-config=/etc/kubernetes/oidc-auth/oidc.yaml
+        extraVolumeMounts:
+            - mountPath: /etc/ssl/host-certs
+              name: etc-ssl-certs-from-host
+              readOnly: true
+            - mountPath: /etc/kubernetes/oidc-auth
+              name: oidc-auth
+              readOnly: true
+        resources: {}
+    controllerManager:
+        extraArgs:
+            - --cloud-provider=external
+        resources: {}
+    extraCertSANs:
+        - konnectivity-testclustercp.default-service.k8s.byo-upg-3.app.dev-pcd.platform9.com
+        - testclustercp.default-service.k8s.byo-upg-3.app.dev-pcd.platform9.com
+    extraVolumes:
+        - configMap:
+            name: oidc-auth-testcluster
+          name: oidc-auth
+        - configMap:
+            name: oidc-auth-testclustercp
+          name: oidc-auth
+    hcpClass: default
+    hostname: testclustercp.default-service.k8s.byo-upg-3.app.dev-pcd.platform9.com
+    kubelet:
+        cgroupfs: systemd
+        preferredAddressTypes:
+            - InternalIP
+            - ExternalIP
+            - Hostname
+    scheduler:
+        resources: {}
+    version: v1.31.2
+
+---
+apiVersion: infrastructure.cluster.x-k8s.io/v1beta1
+kind: ByoMachineTemplate
+metadata:
+    name: testcluster
+    namespace: testns
+spec:
+    template:
+        spec:
+            installerRef:
+                apiVersion: infrastructure.cluster.x-k8s.io/v1beta1
+                kind: K8sInstallerConfigTemplate
+                name: testcluster
+                namespace: testns
+
+---
+apiVersion: bootstrap.cluster.x-k8s.io/v1beta1
+kind: KubeadmConfigTemplate
+metadata:
+    name: testcluster
+    namespace: testns
+spec:
+    template:
+        spec: {}
+
+---
+apiVersion: cluster.x-k8s.io/v1beta1
+kind: MachineDeployment
+metadata:
+    name: testcluster
+    namespace: testns
+spec:
+    clusterName: testcluster
+    replicas: 1
+    template:
+        spec:
+            bootstrap:
+                configRef:
+                    apiVersion: bootstrap.cluster.x-k8s.io/v1beta1
+                    kind: KubeadmConfigTemplate
+                    name: testcluster
+            clusterName: testcluster
+            infrastructureRef:
+                apiVersion: infrastructure.cluster.x-k8s.io/v1beta1
+                kind: ByoMachineTemplate
+                name: testcluster
+            version: v1.31.2
+
+---
+apiVersion: infrastructure.cluster.x-k8s.io/v1beta1
+kind: K8sInstallerConfigTemplate
+metadata:
+    name: testcluster
+    namespace: testns
+spec:
+    template:
+        spec:
+            bundleRepo: quay.io/platform9
+            bundleType: k8s

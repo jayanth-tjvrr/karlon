@@ -1,0 +1,6 @@
+apiVersion: kuttl.dev/v1beta1
+kind: TestStep
+commands:
+  - command: karlon cluster delete ec2-cluster
+  - command: karlon bundle delete xenial
+  - command: karlon profile delete dynamic-2

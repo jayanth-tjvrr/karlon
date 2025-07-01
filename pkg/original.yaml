@@ -1,0 +1,158 @@
+apiVersion: cluster.x-k8s.io/v1beta1
+kind: Cluster
+metadata:
+  labels:
+    cas-capi-version: v1.32
+    core-addons: enabled
+    metrics-server: 0.6.4
+    proxy-addons: enabled
+  name: tri-hack-1
+  namespace: du-on-devdp4-default-service-2
+spec:
+  clusterNetwork:
+    apiServerPort: 443
+    pods:
+      cidrBlocks:
+      - 10.244.0.0/16
+    services:
+      cidrBlocks:
+      - 10.96.0.0/16
+  controlPlaneRef:
+    apiVersion: controlplane.platform9.io/v1alpha1
+    kind: HostedControlPlane
+    name: tri-hack-1cp
+    namespace: du-on-devdp4-default-service-2
+  infrastructureRef:
+    apiVersion: infrastructure.cluster.x-k8s.io/v1beta1
+    kind: ByoCluster
+    name: tri-hack-1
+    namespace: du-on-devdp4-default-service-2
+---
+apiVersion: infrastructure.cluster.x-k8s.io/v1beta1
+kind: ByoCluster
+metadata:
+  name: tri-hack-1
+  namespace: du-on-devdp4-default-service-2
+spec:
+  bundleLookupBaseRegistry: quay.io/platform9
+  controlPlaneEndpoint:
+    host: tri-hack-1cp.default-service.k8s.byo-upg-3.app.dev-pcd.platform9.com
+    port: 443
+---
+apiVersion: controlplane.platform9.io/v1alpha1
+kind: HostedControlPlane
+metadata:
+  name: tri-hack-1cp
+  namespace: du-on-devdp4-default-service-2
+spec:
+  addons:
+    coreDNS: {}
+    konnectivity:
+      agent:
+        extraArgs:
+        - --proxy-server-host=konnectivity-tri-hack-1cp.default-service.k8s.byo-upg-3.app.dev-pcd.platform9.com
+        - --proxy-server-port=443
+        image: registry.k8s.io/kas-network-proxy/proxy-agent
+        tolerations:
+        - key: CriticalAddonsOnly
+          operator: Exists
+        version: v0.0.32
+      server:
+        image: registry.k8s.io/kas-network-proxy/proxy-server
+        port: 8132
+        version: v0.0.32
+  apiServer:
+    extraArgs:
+    - --cloud-provider=external
+    - --cors-allowed-origins=https://byo-upg-3-regionone.app.dev-pcd.platform9.com,https://byo-upg-3-regionone.app.dev-pcd.platform9.com/,https://byo-upg-3-regionone.app.dev-pcd.platform9.com,https://byo-upg-3-regionone.app.dev-pcd.platform9.com/
+    - --advertise-address=10.96.0.40
+    - --authentication-config=/etc/kubernetes/oidc-auth/oidc.yaml
+    extraVolumeMounts:
+    - mountPath: /etc/ssl/host-certs
+      name: etc-ssl-certs-from-host
+      readOnly: true
+    - mountPath: /etc/kubernetes/oidc-auth
+      name: oidc-auth
+      readOnly: true
+    resources: {}
+  controllerManager:
+    extraArgs:
+    - --cloud-provider=external
+    resources: {}
+  extraCertSANs:
+  - konnectivity-tri-hack-1cp.default-service.k8s.byo-upg-3.app.dev-pcd.platform9.com
+  - tri-hack-1cp.default-service.k8s.byo-upg-3.app.dev-pcd.platform9.com
+  extraVolumes:
+  - configMap:
+      name: oidc-auth-tri-hack-1
+    name: oidc-auth
+  - configMap:
+      name: oidc-auth-tri-hack-1cp
+    name: oidc-auth
+  hcpClass: default
+  hostname: tri-hack-1cp.default-service.k8s.byo-upg-3.app.dev-pcd.platform9.com
+  kubelet:
+    cgroupfs: systemd
+    preferredAddressTypes:
+    - InternalIP
+    - ExternalIP
+    - Hostname
+  scheduler:
+    resources: {}
+  version: 1.31.2
+---
+apiVersion: infrastructure.cluster.x-k8s.io/v1beta1
+kind: ByoMachineTemplate
+metadata:
+  name: tri-hack-1
+  namespace: du-on-devdp4-default-service-2
+spec:
+  template:
+    spec:
+      installerRef:
+        apiVersion: infrastructure.cluster.x-k8s.io/v1beta1
+        kind: K8sInstallerConfigTemplate
+        name: tri-hack-1
+        namespace: du-on-devdp4-default-service-2
+---
+apiVersion: bootstrap.cluster.x-k8s.io/v1beta1
+kind: KubeadmConfigTemplate
+metadata:
+  name: tri-hack-1
+  namespace: du-on-devdp4-default-service-2
+spec:
+  template:
+    spec: {}
+---
+apiVersion: cluster.x-k8s.io/v1beta1
+kind: MachineDeployment
+metadata:
+  name: tri-hack-1 
+  namespace: du-on-devdp4-default-service-2
+spec:
+  clusterName: tri-hack-1
+  replicas: 1
+  template:
+    spec:
+      bootstrap:
+        configRef:
+          apiVersion: bootstrap.cluster.x-k8s.io/v1beta1
+          kind: KubeadmConfigTemplate
+          name: tri-hack-1
+      clusterName: tri-hack-1
+      infrastructureRef:
+        apiVersion: infrastructure.cluster.x-k8s.io/v1beta1
+        kind: ByoMachineTemplate
+        name: tri-hack-1
+      version: v1.31.2
+---
+apiVersion: infrastructure.cluster.x-k8s.io/v1beta1
+kind: K8sInstallerConfigTemplate
+metadata:
+  name: tri-hack-1
+  namespace: du-on-devdp4-default-service-2
+spec:
+  template:
+    spec:
+      bundleRepo: quay.io/platform9
+      bundleType: k8s

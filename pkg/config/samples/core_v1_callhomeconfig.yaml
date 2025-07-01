@@ -1,0 +1,6 @@
+apiVersion: core.kkarlon.io/v1
+kind: CallHomeConfig
+metadata:
+  name: callhomeconfig-sample
+spec:
+  # TODO(user): Add fields here

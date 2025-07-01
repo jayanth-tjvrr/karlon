@@ -1,0 +1,10 @@
+apiVersion: core.karlon.io/v1
+kind: ClusterRegistration
+metadata:
+  name: {{ .Values.global.clusterName }}
+  namespace: {{ .Values.global.clusterName }}
+spec:
+  clusterName: {{ .Values.global.clusterName }}
+  kubeconfigSecretName: {{ .Values.global.clusterName }}-{{ .Values.global.innerClusterNameWithDashSuffix }}kubeconfig
+  kubeconfigSecretKeyName: {{ .Values.global.kubeconfigSecretKeyName }}
+

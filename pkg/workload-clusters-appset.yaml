@@ -1,0 +1,30 @@
+apiVersion: argoproj.io/v1alpha1
+kind: ApplicationSet
+metadata:
+  name: workload-clusters
+  namespace: du-on-devdp4
+spec:
+  generators:
+    - git:
+        repoURL: 'https://github.com/jayanth-tjvrr/tri-hack.git'
+        revision: main
+        files:
+          - path: clusters/*-cluster.yaml
+  template:
+    metadata:
+      name: '{{path.basename}}'
+    spec:
+      project: default
+      source:
+        repoURL: 'https://github.com/jayanth-tjvrr/tri-hack.git'
+        targetRevision: main
+        path: '{{path}}'
+      destination:
+        server: https://kubernetes.default.svc
+        namespace: du-on-devdp4
+      syncPolicy:
+        automated:
+          prune: true
+          selfHeal: true
+        syncOptions:
+        - CreateNamespace=true

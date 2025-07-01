@@ -1,0 +1,4 @@
+apiVersion: kuttl.dev/v1beta1
+kind: TestStep
+commands:
+  - command: karlon basecluster preparegit --repo-path basecluster/ec2-cluster

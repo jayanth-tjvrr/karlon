@@ -1,0 +1,8 @@
+apiVersion: core.karlon.io/v1
+kind: Profile
+metadata:
+  namespace: karlon
+  name: dynamic-2
+spec:
+  bundles:
+    - guestbook

@@ -1,0 +1,19 @@
+apiVersion: core.karlon.io/v1
+kind: AppProfile
+metadata:
+  name: frontend
+  namespace: karlon
+spec:
+  appNames:
+  - guestbook
+  - nonexistent-1
+---
+apiVersion: core.karlon.io/v1
+kind: AppProfile
+metadata:
+  name: backend
+  namespace: karlon
+spec:
+  appNames:
+  - redis
+  - nonexistent-2

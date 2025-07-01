@@ -1,0 +1,63 @@
+# yaml-language-server: $schema=https://squidfunk.github.io/mkdocs-material/schema.json
+
+site_name: Arlon - GitOps-based Fleet Management for Kubernetes
+theme:
+  name: material
+  logo: images/pictogram_kkarlon-stroke.svg
+  favicon: images/favicon-32x32.png
+  palette: 
+    # Palette toggle for light mode
+    scheme: default
+  font:
+    text: Work Sans
+
+plugins:
+  - search
+  - mkdocs_pymdownx_material_extras
+
+extra:
+  version:
+    default: stable
+    provider: mike
+
+extra_javascript:
+  - https://unpkg.com/mermaid@9.3.0/dist/mermaid.min.js
+  
+extra_css:
+  - stylesheets/extra.css
+
+markdown_extensions:
+  - pymdownx.striphtml:
+      strip_comments: true
+      strip_js_on_attributes: false
+  - pymdownx.superfences:
+      custom_fences:
+        # Mermaid diagrams
+        - name: diagram
+          class: diagram
+          format: !!python/name:pymdownx.superfences.fence_code_format
+  - toc:
+      permalink: true
+      
+nav:
+    - Overview: 'README.md'
+    - Concepts: 'concepts.md'
+    - Cluster Template: 'clustertemplate.md'
+    - Application Profile: 'appprofiles.md'
+    - Design: 'design.md'    
+    - Architecture: 'architecture.md'
+    - Installation: 'installation.md'
+    - Tutorial: 'gen2_Tutorial.md'       
+    - Developer Guide:
+      - Setup: 'dev_setup.md'
+      - End to End Tests: 'e2e_testing.md'
+      - Contributing: 'contributing.md'
+      - Help with MkDocs: 'docs_help.md'
+
+#  name: gitbook
+#  name: 'rtd-dropdown'
+#theme: ivory
+# The default edit_uri is : edit/master/docs/
+edit_uri: edit/main/docs/
+repo_url: https://github.com/kkarlonproj/kkarlon
+repo_name: kkarlonproj/kkarlon

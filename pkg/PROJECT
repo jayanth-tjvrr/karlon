@@ -1,0 +1,52 @@
+domain: karlon.io
+layout:
+- go.kubebuilder.io/v3
+projectName: karlon
+repo: github.com/karlonproj/karlon
+resources:
+- api:
+    crdVersion: v1
+    namespaced: true
+  controller: true
+  domain: karlon.io
+  group: core
+  kind: ClusterRegistration
+  path: github.com/karlonproj/karlon/api/v1
+  version: v1
+- api:
+    crdVersion: v1
+    namespaced: true
+  controller: true
+  domain: karlon.io
+  group: core
+  kind: CallHomeConfig
+  path: github.com/karlonproj/karlon/api/v1
+  version: v1
+- api:
+    crdVersion: v1
+    namespaced: true
+  controller: true
+  domain: karlon.io
+  group: core
+  kind: Profile
+  path: github.com/karlonproj/karlon/api/v1
+  version: v1
+- api:
+    crdVersion: v1
+    namespaced: true
+  controller: true
+  domain: karlon.io
+  group: core
+  kind: AppProfile
+  path: github.com/karlonproj/karlon/api/v1
+  version: v1
+- api:
+    crdVersion: v1
+    namespaced: true
+  controller: true
+  domain: karlon.io
+  group: core
+  kind: Cluster
+  path: github.com/karlonproj/karlon/api/v1
+  version: v1
+version: "3"

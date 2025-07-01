@@ -1,0 +1,12 @@
+apiVersion: core.kkarlon.io/v1
+kind: AppProfile
+metadata:
+  labels:
+    app.kubernetes.io/name: appprofile
+    app.kubernetes.io/instance: appprofile-sample
+    app.kubernetes.io/part-of: kkarlon
+    app.kuberentes.io/managed-by: kustomize
+    app.kubernetes.io/created-by: kkarlon
+  name: appprofile-sample
+spec:
+  # TODO(user): Add fields here

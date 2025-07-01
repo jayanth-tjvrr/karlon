@@ -1,0 +1,17 @@
+apiVersion: kuttl.dev/v1beta1
+kind: TestAssert
+timeout: 150
+---
+apiVersion: argoproj.io/v1alpha1
+kind: Application
+metadata:
+  labels:
+    karlon-cluster: ec2-cluster
+    karlon-profile: dynamic-1
+    karlon-type: profile-app
+    managed-by: karlon
+  namespace: argocd
+  name: ec2-cluster-profile-dynamic-1
+status:
+  health:
+    status: Healthy

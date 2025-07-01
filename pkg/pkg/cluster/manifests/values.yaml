@@ -1,0 +1,27 @@
+# Default values for chart1.
+# This is a YAML-formatted file.
+# Declare variables to be passed into your templates.
+
+global:
+  clusterFullNameWithInnerCluster: cluster-x-inner-change-me
+  clusterName: cluster-x-change-me
+  innerClusterNameWithDashSuffix: ""
+  region: us-west-2
+  sshKeyName: nobody-change-me
+  kubernetesVersion: v1.18.16
+  podCidrBlock: 192.168.0.0/16
+  nodeCount: 2
+  masterNodeCount: 1
+  nodeType: t3.large
+  kubeconfigSecretKeyName: value
+  clusterAutoscalerEnabled: false
+  clusterAutoscalerMinNodes: "1"
+  clusterAutoscalerMaxNodes: "9"
+  managementClusterUrl: https://change-me.invalid.org:8888
+
+tags:
+  capi-aws-eks: false
+  capi-aws-kubeadm: false
+  capi-cluster-autoscaler: false
+  xplane-aws-eks: false
+

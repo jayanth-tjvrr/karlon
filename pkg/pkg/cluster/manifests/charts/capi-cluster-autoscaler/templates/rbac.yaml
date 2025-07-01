@@ -1,0 +1,74 @@
+apiVersion: v1
+kind: Secret
+metadata:
+  namespace: {{ .Values.global.clusterName }}
+  name:  cluster-autoscaler-mgmt-kubeconfig
+  annotations:
+    kubernetes.io/service-account.name: cluster-autoscaler
+type: kubernetes.io/service-account-token
+---
+apiVersion: v1
+kind: ServiceAccount
+metadata:
+  name: cluster-autoscaler
+  namespace: {{ .Values.global.clusterName }}
+---
+kind: RoleBinding
+apiVersion: rbac.authorization.k8s.io/v1
+metadata:
+  name: cluster-autoscaler
+  namespace: {{ .Values.global.clusterName }}
+roleRef:
+  apiGroup: rbac.authorization.k8s.io
+  kind: Role
+  name: cluster-autoscaler
+subjects:
+  - kind: ServiceAccount
+    name: cluster-autoscaler
+    namespace: {{ .Values.global.clusterName }}
+---
+kind: Role
+apiVersion: rbac.authorization.k8s.io/v1
+metadata:
+  name: cluster-autoscaler
+  namespace: {{ .Values.global.clusterName }}
+rules:
+  - apiGroups:
+      - cluster.x-k8s.io
+    resources:
+      - machinedeployments
+      - machinedeployments/scale
+      - machines
+      - machinesets
+    verbs:
+      - get
+      - list
+      - update
+      - watch
+---
+# The following allows karlon callhomeconfig controller to read the
+# cluster-autoscaler service account in the cluster namespace
+# in order to extract its token.
+apiVersion: rbac.authorization.k8s.io/v1
+kind: Role
+metadata:
+  name: serviceaccounts-reader
+  namespace: {{ .Values.global.clusterName }}
+rules:
+  - apiGroups: [""]
+    resources: ["serviceaccounts"]
+    verbs: ["get"]
+---
+apiVersion: rbac.authorization.k8s.io/v1
+kind: RoleBinding
+metadata:
+  name: karlon-serviceaccounts-reader
+  namespace: {{ .Values.global.clusterName }}
+subjects:
+  - kind: ServiceAccount
+    name: default
+    namespace: karlon
+roleRef:
+  kind: Role
+  name: serviceaccounts-reader
+  apiGroup: rbac.authorization.k8s.io
