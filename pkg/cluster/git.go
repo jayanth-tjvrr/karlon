@@ -7,12 +7,12 @@ import (
 	"text/template"
 
 	kkarlonv1 "github.com/jayanth-tjvrr/karlon/pkg/api/v1"
-	"github.com/jayanth-tjvrr/karlon/pkg/pkg/argocd"
-	bcl "github.com/jayanth-tjvrr/karlon/pkg/pkg/basecluster"
-	"github.com/jayanth-tjvrr/karlon/pkg/pkg/bundle"
-	"github.com/jayanth-tjvrr/karlon/pkg/pkg/gitutils"
-	logpkg "github.com/jayanth-tjvrr/karlon/pkg/pkg/log"
-	"github.com/jayanth-tjvrr/karlon/pkg/pkg/profile"
+	"github.com/jayanth-tjvrr/karlon/pkg/argocd"
+	bcl "github.com/jayanth-tjvrr/karlon/pkg/basecluster"
+	"github.com/jayanth-tjvrr/karlon/pkg/bundle"
+	"github.com/jayanth-tjvrr/karlon/pkg/gitutils"
+	logpkg "github.com/jayanth-tjvrr/karlon/pkg/log"
+	"github.com/jayanth-tjvrr/karlon/pkg/profile"
 	"github.com/go-git/go-billy"
 	gogit "github.com/go-git/go-git/v5"
 )

@@ -6,8 +6,8 @@ import (
 
 	apppkg "github.com/argoproj/argo-cd/v2/pkg/apiclient/application"
 	argoapp "github.com/argoproj/argo-cd/v2/pkg/apiclient/application"
-	"github.com/jayanth-tjvrr/karlon/pkg/pkg/common"
-	logpkg "github.com/jayanth-tjvrr/karlon/pkg/pkg/log"
+	"github.com/jayanth-tjvrr/karlon/pkg/common"
+	logpkg "github.com/jayanth-tjvrr/karlon/pkg/log"
 	metav1 "k8s.io/apimachinery/pkg/apis/meta/v1"
 	"k8s.io/client-go/kubernetes"
 	restclient "k8s.io/client-go/rest"

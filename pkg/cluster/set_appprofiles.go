@@ -4,7 +4,7 @@ import (
 	"context"
 	"fmt"
 	argoapp "github.com/argoproj/argo-cd/v2/pkg/apiclient/application"
-	kkarlonapp "github.com/jayanth-tjvrr/karlon/pkg/pkg/app"
+	kkarlonapp "github.com/jayanth-tjvrr/karlon/pkg/app"
 )
 
 //------------------------------------------------------------------------------

@@ -4,8 +4,8 @@ import (
 	"fmt"
 	"github.com/argoproj/argo-cd/v2/pkg/apis/application"
 	argoappv1 "github.com/argoproj/argo-cd/v2/pkg/apis/application/v1alpha1"
-	"github.com/jayanth-tjvrr/karlon/pkg/pkg/clusterspec"
-	"github.com/jayanth-tjvrr/karlon/pkg/pkg/common"
+	"github.com/jayanth-tjvrr/karlon/pkg/clusterspec"
+	"github.com/jayanth-tjvrr/karlon/pkg/common"
 	corev1 "k8s.io/api/core/v1"
 	v1 "k8s.io/apimachinery/pkg/apis/meta/v1"
 )
